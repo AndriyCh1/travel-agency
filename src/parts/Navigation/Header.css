@@ -1,0 +1,20 @@
+.main-header {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    justify-content: flex-end;
+    top: 0;
+    left: 0;
+    background: #d6dae0;
+    box-shadow: 0 2px 6px rgba(154, 170, 184, 0.26);
+    padding: 0 1rem;
+    z-index: 5;
+  }
+  
+  main {
+    margin-top: 5rem;
+  }
+  
+  
