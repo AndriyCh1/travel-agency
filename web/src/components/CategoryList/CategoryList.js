@@ -5,7 +5,7 @@ import "./CategoryList.css"
 import axios from "axios";
 import CategoryModalForm from "../ModalForm/CategoryModalForm";
 
-const baseURL = "https://agency-api31.herokuapp.com";
+const baseURL = "http://localhost:3001";
 
 const CategoryList = (props) =>  {
     const [categoryModal, setCategoryModal] = useState(false);
@@ -33,7 +33,7 @@ const CategoryList = (props) =>  {
         categoryModal={categoryModal}
         setCategoryModal={setCategoryModal}
         editId={editId}
-        mutateCategories={props.mutateCategories}
+        mutateCategories={props.mutateCategories()}
     />: null}
 
     <div className="categories">

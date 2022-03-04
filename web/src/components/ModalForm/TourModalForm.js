@@ -10,7 +10,7 @@ import "./TourModalForm.css";
 import Button from "../../parts/UIElements/Button";
 import Removable from "../../parts/UIElements/Removable";
 
-const baseURL = "https://agency-api31.herokuapp.com";
+const baseURL = "http://localhost:3001";
 
 const fetcher = url => axios.get(url).then(res => res.data)
 

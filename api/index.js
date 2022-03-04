@@ -8,7 +8,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 var corsOptions = {
-  origin: "https://agency-web31.herokuapp.com"
+  origin: "http://localhost:3000"
 };
 
 app.use(cors(corsOptions));

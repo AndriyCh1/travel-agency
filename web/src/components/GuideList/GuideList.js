@@ -4,7 +4,7 @@ import Button from "../../parts/UIElements/Button";
 import Guide from "../Guide/Guide";
 import GuideModalForm from "../ModalForm/GuideModalForm";
 import "./GuideList.css"
-const baseURL = "https://agency-api31.herokuapp.com";
+const baseURL = "http://localhost:3001";
 
 const GuideList = (props) =>  {
     const [guideModal, setGuideModal] = useState(false);

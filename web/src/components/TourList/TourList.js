@@ -8,7 +8,7 @@ import CategoryModalForm from "../ModalForm/CategoryModalForm"
 import axios from "axios";
 import GuideModalForm from "../ModalForm/GuideModalForm";
 
-const baseURL = "https://agency-api31.herokuapp.com";
+const baseURL = "http://localhost:3001";
 
 const TourList = (props) => {
   const [modal, setModal] = useState(false);

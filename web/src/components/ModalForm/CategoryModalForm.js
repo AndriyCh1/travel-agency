@@ -6,7 +6,7 @@ import useSWR from "swr";
 import "./ModalForm.css";
 import Button from "../../parts/UIElements/Button";
 
-const baseURL = "https://agency-api31.herokuapp.com";
+const baseURL = "http://localhost:3001";
 
 const fetcher = url => axios.get(url).then(res => res.data)
 
