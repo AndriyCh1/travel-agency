@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 
 import { Formik, Field, Form } from "formik";
 import * as yup from "yup";
@@ -20,6 +20,8 @@ const TourModalForm = (props) => {
   const { data: tourGuides, mutate: mutateTourGuides } = useSWR(props.editId ? `${baseURL}/tours/${props.editId}/guides` : null, fetcher)
   const { data: tour } = useSWR(props.editId ? `${baseURL}/tours/${props.editId}` : null, fetcher)
 
+  const [addingCategory, setAddingCategory] = useState(false);
+
   const createTour = (tour) => {
     axios.post(`${baseURL}/tours`, tour || {}).then((response) => {
       props.mutateTours();
@@ -33,10 +35,10 @@ const TourModalForm = (props) => {
       props.setModal(false);
     })
   }
+
   const createCategory = (name) => {
     axios.post(`${baseURL}/categories`, {name} || {}).then((response) => {
       mutateCategory();
-      props.setModal(false)
     })
   }
 
@@ -52,7 +54,8 @@ const TourModalForm = (props) => {
     })
   }
 
-  const [addingCategory, setAddingCategory] = useState(false);
+  useEffect(() => mutateCategory(), [addingCategory]);
+  
   const validationSchema = yup.object().shape({
     name: yup.string().required("Обов'язкове поле"),
     categoryId: yup.number().min(1, "Обов'язкове поле").required("Обов'язкове поле"),
@@ -100,7 +103,6 @@ const TourModalForm = (props) => {
       }
         validateOnBlur
         onSubmit={(values) => {
-          console.log(values, "tour mmodal=----------------");
           if(props.editId) updateTour(values);
           else createTour(values);
         }}
