@@ -1,0 +1,29 @@
+.categories {
+  width: 60%;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.category-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-left: 0px;
+}
+
+.category-item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: azure;
+  align-items: center;
+  padding: 0 15px;
+  border: 1px solid #5274a3ad;
+}
+
+.category-action > *{
+  margin-right: 8px;
+}
+
+
